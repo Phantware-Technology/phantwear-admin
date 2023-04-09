@@ -15,7 +15,7 @@ const TOKEN = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user)
 
 export const axiosInstance = axios.create({
   baseURL: BASE_URL,
-  ...(TOKEN && { header: { token: `Bearer ${TOKEN}` } }),
+  ...(TOKEN && { headers: { token: `Bearer ${TOKEN}` } }),
 })
 
 axiosInstance.interceptors.request.use(
