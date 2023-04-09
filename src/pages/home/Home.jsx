@@ -6,7 +6,7 @@ import { userData } from '../../dummyData'
 import WidgetSm from '../../components/widgetSm/WidgetSm'
 import WidgetLg from '../../components/widgetLg/WidgetLg'
 import { useEffect, useMemo, useState } from 'react'
-import { userRequest } from '../../requestMethods'
+import { axiosInstance } from '../../utils/requestMethods'
 import Topbar from '../../components/topbar/Topbar'
 import Sidebar from '../../components/sidebar/Sidebar'
 
@@ -34,7 +34,7 @@ export default function Home() {
   useEffect(() => {
     const getStats = async () => {
       try {
-        const res = await userRequest.get('/users/stats')
+        const res = await axiosInstance.get('/users/stats')
         res.data.map((item) =>
           setUserStats((prev) => [
             ...prev,
