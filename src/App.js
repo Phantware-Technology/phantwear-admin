@@ -14,24 +14,21 @@ import Login from './pages/login/Login'
 import { useSelector } from 'react-redux'
 
 function App() {
-  const admin = useSelector((state) => state.user.currentUser.isAdmin)
+  // const admin = useSelector((state) => state.user.currentUser.isAdmin)
+  const admin = true
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/login' element={<Login />} />
         {admin && (
           <>
-            <Topbar />
-            <div className='container'>
-              <Sidebar />
-              <Route path='/' element={<Home />} />
-              <Route path='/users' element={<UserList />} />
-              <Route path='/user/:userId' element={<User />} />
-              <Route path='/newUser' element={<NewUser />} />
-              <Route path='/products' element={<ProductList />} />
-              <Route path='/product/:productId' element={<Product />} />
-              <Route path='/newproduct' element={<NewProduct />} />
-            </div>
+            <Route path='/' element={<Home />} />
+            <Route path='/users' element={<UserList />} />
+            <Route path='/user/:userId' element={<User />} />
+            <Route path='/newUser' element={<NewUser />} />
+            <Route path='/products' element={<ProductList />} />
+            <Route path='/product/:productId' element={<Product />} />
+            <Route path='/newproduct' element={<NewProduct />} />
           </>
         )}
       </Routes>
