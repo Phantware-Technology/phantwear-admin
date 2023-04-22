@@ -5,15 +5,17 @@ import { useEffect, useState } from 'react'
 import { axiosInstance } from '../../utils/requestMethods'
 
 export default function FeaturedInfo() {
-  const [income, setIncome] = useState([])
+  const [income, setIncome] = useState(0)
   const [perc, setPerc] = useState(0)
-
   useEffect(() => {
     const getIncome = async () => {
       try {
         const res = await axiosInstance.get('orders/income')
-        setIncome(res.data)
-        setPerc((res.data[1].total * 100) / res.data[0].total - 100)
+        if (res.status) {
+          const total = res.data[0].total
+          setIncome(total)
+          setPerc((total * 100) / total - 100)
+        }
       } catch {}
     }
     getIncome()
@@ -26,7 +28,7 @@ export default function FeaturedInfo() {
       <div className='featuredItem'>
         <span className='featuredTitle'>Revenue</span>
         <div className='featuredMoneyContainer'>
-          <span className='featuredMoney'>{income[1]?.total}</span>
+          <div className='featuredMoney'>{income || 0}</div>
           <span className='featuredMoneyRate'>
             %{Math.floor(perc)}
             {perc < 0 ? (
