@@ -11,6 +11,8 @@ export default function ProductList() {
   const dispatch = useDispatch()
   const products = useSelector((state) => state.product.products)
 
+  console.log('products', products)
+
   useEffect(() => {
     getProducts(dispatch)
   }, [dispatch])
@@ -24,8 +26,9 @@ export default function ProductList() {
     {
       field: 'product',
       headerName: 'Product',
-      width: 200,
+      width: 300,
       renderCell: (params) => {
+        console.log('params', params.row.title)
         return (
           <div className='productListItem'>
             <img className='productListImg' src={params.row.img} alt='' />
@@ -67,8 +70,10 @@ export default function ProductList() {
         disableSelectionOnClick
         columns={columns}
         getRowId={(row) => row._id}
-        pageSize={8}
+        pageSize={10}
+        rowsPerPageOptions={[5]}
         checkboxSelection
+        autoHeight
       />
     </div>
   )
