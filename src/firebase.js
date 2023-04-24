@@ -5,12 +5,12 @@ import { initializeApp } from 'firebase/app'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyCB-h_T2ZL-a7xt5zMvZmSh8GBXtawzL0c',
-  authDomain: 'shop-889c6.firebaseapp.com',
-  projectId: 'shop-889c6',
-  storageBucket: 'shop-889c6.appspot.com',
-  messagingSenderId: '105110075028',
-  appId: '1:105110075028:web:7cee5adf1ed39f597e6681',
+  apiKey: 'AIzaSyBgwKNAp4kJweE_R3T5fQoMwJLBQJwHwZg',
+  authDomain: 'phantwear-3a0d2.firebaseapp.com',
+  projectId: 'phantwear-3a0d2',
+  storageBucket: 'phantwear-3a0d2.appspot.com',
+  messagingSenderId: '171341057097',
+  appId: '1:171341057097:web:efc44310c074935fe74398',
 }
 
 // Initialize Firebase
