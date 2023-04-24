@@ -67,6 +67,7 @@ export default function UserList() {
         columns={columns}
         pageSize={8}
         checkboxSelection
+        autoHeight
       />
     </div>
   )
