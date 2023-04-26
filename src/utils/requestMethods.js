@@ -2,8 +2,8 @@ import axios from 'axios'
 const dotenv = require('dotenv')
 dotenv.config()
 
-const BASE_URL = 'http://localhost:5000/api/'
-// const BASE_URL = 'https://e-commerce-api-z6rv.onrender.com/api/'
+// const BASE_URL = 'http://localhost:5000/api/'
+const BASE_URL = 'https://e-commerce-api-z6rv.onrender.com/api/'
 
 // const TOKEN = process.env.TOKEN
 const TOKEN = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user)
