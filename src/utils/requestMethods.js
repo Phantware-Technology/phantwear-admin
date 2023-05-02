@@ -6,9 +6,13 @@ dotenv.config()
 const BASE_URL = 'https://e-commerce-api-z6rv.onrender.com/api/'
 
 // const TOKEN = process.env.TOKEN
-const TOKEN = JSON.parse(
-  JSON.parse(localStorage.getItem('persist:root'))?.user || '{}'
-)?.currentUser?.accessToken
+const TOKEN = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user)
+  .currentUser.accessToken
+
+//Best Method
+// const TOKEN = JSON.parse(
+//   JSON.parse(localStorage.getItem('persist:root'))?.user || '{}'
+// )?.currentUser?.accessToken
 
 // export const publicRequest = axios.create({
 //   baseURL: BASE_URL,
