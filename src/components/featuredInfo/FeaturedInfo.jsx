@@ -38,7 +38,7 @@ export default function FeaturedInfo() {
             )}
           </span>
         </div>
-        <span className='featuredSub'>Compared to last month</span>
+        <span className='featuredSub'>Compared to last month 1</span>
       </div>
       <div className='featuredItem'>
         <span className='featuredTitle'>Sales</span>
