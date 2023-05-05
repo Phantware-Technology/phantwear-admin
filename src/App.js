@@ -16,11 +16,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' exact element={<Login />} />
         {admin && (
           <>
             <Route path='/' element={<Home />} />
-            <Route path='login' element={<Login />} />
             <Route path='/users' element={<UserList />} />
             <Route path='/user/:userId' element={<User />} />
             <Route path='/newUser' element={<NewUser />} />
